@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppButton extends StatelessWidget {
   const AppButton({
@@ -17,17 +18,35 @@ class AppButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FilledButton(
-      onPressed: onPressed,
-      style: FilledButton.styleFrom(
-        backgroundColor: color,
-        visualDensity: VisualDensity.compact,
-        fixedSize: Size(
-          width ?? double.infinity, // default: full width
-          height ?? 55, // default: 55 height
+    return SizedBox(
+      width: width ?? double.infinity,
+      height: height ?? 55.h,
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: const Color(0xff284243),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8.r), // ← Cancel radius
+          ),
+        ),
+        child: Text(
+          text,
+          style: TextStyle(
+            fontSize: 18.sp,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
-      child: Text(text),
+
+      //  FilledButton(
+      //   onPressed: onPressed,
+      //   style: FilledButton.styleFrom(
+      //     backgroundColor: color,
+      //     visualDensity: VisualDensity.compact,
+      //   ),
+      //   child: Text(text),
+      // ),
     );
   }
 }

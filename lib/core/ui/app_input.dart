@@ -32,6 +32,7 @@ class _AppInputState extends State<AppInput> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       keyboardType: widget.keyboardType,
       validator: widget.validator,
       textInputAction: TextInputAction.next,

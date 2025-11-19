@@ -19,15 +19,15 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         theme: ThemeData(
           fontFamily: 'Montserrat',
-          scaffoldBackgroundColor: Color(0xffD9D9D9),
-          colorScheme: ColorScheme.fromSeed(seedColor: Color(0xffD75D72)),
+          // scaffoldBackgroundColor: Color(0xffD9D9D9),
+          colorScheme: ColorScheme.fromSeed(seedColor: Color(0xff284243)),
           appBarTheme: const AppBarTheme(
             titleTextStyle: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
-              color: Color(0xff434C6D),
+              // color: Color(0xff434C6D),
             ),
-            iconTheme: IconThemeData(color: Color(0xff434C6D)),
+            // iconTheme: IconThemeData(color: Color(0xff434C6D)),
             centerTitle: true,
             elevation: 0,
             backgroundColor: Colors.transparent,

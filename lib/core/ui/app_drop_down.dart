@@ -20,7 +20,7 @@ class AppDropDown extends StatelessWidget {
     return SizedBox(
       width: 70.w,
       child: DropdownButtonFormField<String>(
-        value: initialValue ?? countryCodes.first,
+        initialValue: initialValue ?? countryCodes.first,
         validator: validator,
         onChanged: onChanged,
 
