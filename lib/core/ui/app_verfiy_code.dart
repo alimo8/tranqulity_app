@@ -10,16 +10,16 @@ class AppVerfiyCode extends StatelessWidget {
     return PinCodeTextField(
       appContext: context,
       length: 4,
-      cursorColor: Colors.black,
+      cursorColor: Color(0xff284243),
       keyboardType: TextInputType.number,
       animationType: AnimationType.fade,
       pinTheme: PinTheme(
         shape: PinCodeFieldShape.box,
         borderRadius: BorderRadius.circular(12.r),
-        fieldHeight: 55.h,
-        fieldWidth: 50.w,
-        activeColor: Colors.blue,
-        selectedColor: Colors.pink,
+        fieldHeight: 60.h,
+        fieldWidth: 84.w,
+        activeColor: Color(0xff284243),
+        selectedColor: Color(0xff284243),
         inactiveColor: Colors.grey,
       ),
       onChanged: (value) {

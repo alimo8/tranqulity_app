@@ -14,7 +14,7 @@ class OnBoardingView extends StatefulWidget {
 class _OnBoardingViewState extends State<OnBoardingView> {
   int currentIndex = 0;
 
-  goToLoginPage() {
+  void goToLoginPage() {
     goTo(LoginView(), canPop: false);
   }
 

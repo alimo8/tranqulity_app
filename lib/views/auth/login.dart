@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tranqulity/core/logic/helper_methods.dart';
 import 'package:tranqulity/core/ui/app_button.dart';
 import 'package:tranqulity/core/ui/app_input.dart';
+import 'package:tranqulity/core/ui/app_login_or_register.dart';
+import 'package:tranqulity/views/auth/forget_password.dart';
 import 'package:tranqulity/views/auth/widget/social_button.dart';
 
 class LoginView extends StatefulWidget {
@@ -17,11 +20,11 @@ class _LoginViewState extends State<LoginView> {
   final passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Form(
+    return SafeArea(
+      child: Scaffold(
+        body: Form(
           key: formKey,
-          child: Padding(
+          child: SingleChildScrollView(
             padding: EdgeInsets.symmetric(
               horizontal: 24.w,
             ).copyWith(top: 250.h),
@@ -41,6 +44,7 @@ class _LoginViewState extends State<LoginView> {
                 ),
                 SizedBox(height: 10.h),
                 AppInput(
+                  labelText: 'Phone Number',
                   controller: phoneController,
                   keyboardType: TextInputType.phone,
                   validator: (value) {
@@ -50,8 +54,8 @@ class _LoginViewState extends State<LoginView> {
                     return null;
                   },
                 ),
-                SizedBox(height: 16.h),
                 AppInput(
+                  labelText: 'Password',
                   controller: passwordController,
                   isPassword: true,
                   validator: (value) {
@@ -61,11 +65,12 @@ class _LoginViewState extends State<LoginView> {
                     return null;
                   },
                 ),
-                SizedBox(height: 12.h),
                 Align(
                   alignment: AlignmentDirectional.centerEnd,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      goTo(ForgetPasswordView());
+                    },
                     child: Text(
                       'Forget Password?',
                       style: TextStyle(
@@ -103,36 +108,9 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ],
                 ),
-
-                SizedBox(height: 30.h),
                 Align(
                   alignment: AlignmentDirectional.center,
-                  child: Text.rich(
-                    TextSpan(
-                      children: [
-                        TextSpan(
-                          text: 'Don’t have an account?',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          children: [],
-                        ),
-                        WidgetSpan(
-                          alignment: PlaceholderAlignment.middle,
-                          child: TextButton(
-                            onPressed: () {
-                              // goTo(RegisterView());
-                            },
-                            child: Text(
-                              'Sign up',
-                              style: TextStyle(color: Color(0xff284243)),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  child: AppLoginOrRegister(),
                 ),
                 SizedBox(height: 24.h),
                 SocialButton(
@@ -146,7 +124,6 @@ class _LoginViewState extends State<LoginView> {
                   icon: 'facebook.png',
                   text: 'Login With Google',
                 ),
-
                 SizedBox(height: 24.h),
               ],
             ),

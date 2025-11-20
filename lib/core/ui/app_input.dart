@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranqulity/core/ui/app_image.dart';
 
 class AppInput extends StatefulWidget {
@@ -13,6 +14,7 @@ class AppInput extends StatefulWidget {
     this.keyboardType,
     this.radius,
     this.withCountryCode = false,
+    this.bottomSpace,
   });
   final String? labelText;
   final String? hintText;
@@ -22,6 +24,7 @@ class AppInput extends StatefulWidget {
   final String? Function(String?)? validator;
   final TextInputType? keyboardType;
   final double? radius;
+  final double? bottomSpace;
 
   @override
   State<AppInput> createState() => _AppInputState();
@@ -31,32 +34,35 @@ class _AppInputState extends State<AppInput> {
   bool isShown = true;
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      autovalidateMode: AutovalidateMode.onUserInteraction,
-      keyboardType: widget.keyboardType,
-      validator: widget.validator,
-      textInputAction: TextInputAction.next,
-      controller: widget.controller,
-      obscureText: widget.isPassword && isShown,
-      decoration: InputDecoration(
-        labelText: widget.labelText,
-        labelStyle: TextStyle(color: Colors.grey),
-        hintText: widget.hintText,
-        hintStyle: TextStyle(color: Colors.grey),
-        suffixIcon: widget.isPassword
-            ? IconButton(
-                focusNode: FocusNode(skipTraversal: true),
-                onPressed: () {
-                  isShown = !isShown;
-                  setState(() {});
-                },
-                icon: AppImage(imageUrl: 'eye_${isShown ? "off" : "on"}.svg'),
-                //  Icon(isShown ? AppImages(imageUrl: imageUrl) : Icons.visibility),
-              )
-            : null,
-        enabledBorder: border,
-        focusedBorder: border,
-        errorBorder: border,
+    return Padding(
+      padding: EdgeInsets.only(bottom: widget.bottomSpace ?? 16.h),
+      child: TextFormField(
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+        keyboardType: widget.keyboardType,
+        validator: widget.validator,
+        textInputAction: TextInputAction.next,
+        controller: widget.controller,
+        obscureText: widget.isPassword && isShown,
+        decoration: InputDecoration(
+          labelText: widget.labelText,
+          labelStyle: TextStyle(color: Colors.grey),
+          hintText: widget.hintText,
+          hintStyle: TextStyle(color: Colors.grey),
+          suffixIcon: widget.isPassword
+              ? IconButton(
+                  focusNode: FocusNode(skipTraversal: true),
+                  onPressed: () {
+                    isShown = !isShown;
+                    setState(() {});
+                  },
+                  icon: AppImage(imageUrl: 'eye_${isShown ? "off" : "on"}.svg'),
+                  //  Icon(isShown ? AppImages(imageUrl: imageUrl) : Icons.visibility),
+                )
+              : null,
+          enabledBorder: border,
+          focusedBorder: border,
+          errorBorder: border,
+        ),
       ),
     );
   }

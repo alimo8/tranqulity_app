@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranqulity/core/logic/helper_methods.dart';
+import 'package:tranqulity/views/auth/create_new_password.dart';
+import 'package:tranqulity/views/auth/forget_password.dart';
+import 'package:tranqulity/views/auth/otp.dart';
 import 'package:tranqulity/views/splash.dart';
 
 void main() {
@@ -48,7 +51,7 @@ class MyApp extends StatelessWidget {
         ),
         debugShowCheckedModeBanner: false,
         navigatorKey: navigatorKey,
-        home: SplashView(),
+        home: OtpView(),
       ),
     );
   }
