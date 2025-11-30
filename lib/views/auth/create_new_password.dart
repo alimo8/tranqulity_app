@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranqulity/core/ui/app_button.dart';
 import 'package:tranqulity/core/ui/app_input.dart';
-import 'package:tranqulity/core/ui/custom_back_button.dart';
+import 'package:tranqulity/core/ui/app_back.dart';
 
 class CreateNewPasswordView extends StatefulWidget {
   const CreateNewPasswordView({super.key});
@@ -26,8 +26,8 @@ class _CreateNewPasswordViewState extends State<CreateNewPasswordView> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomBackButton(),
-                SizedBox(height: 285.h),
+                AppBack(),
+                SizedBox(height: 280.h),
                 Text('Create New Password', style: TextStyle(fontSize: 24.sp)),
                 Text(
                   'create your new password to log in !',

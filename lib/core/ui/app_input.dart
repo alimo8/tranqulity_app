@@ -44,6 +44,7 @@ class _AppInputState extends State<AppInput> {
         controller: widget.controller,
         obscureText: widget.isPassword && isShown,
         decoration: InputDecoration(
+          filled: true,
           labelText: widget.labelText,
           labelStyle: TextStyle(color: Colors.grey),
           hintText: widget.hintText,

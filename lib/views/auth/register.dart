@@ -4,7 +4,7 @@ import 'package:tranqulity/core/ui/app_button.dart';
 import 'package:tranqulity/core/ui/app_input.dart';
 import 'package:tranqulity/core/ui/app_login_or_register.dart';
 import 'package:tranqulity/core/ui/custom_%20dropdown_button.dart';
-import 'package:tranqulity/core/ui/custom_back_button.dart';
+import 'package:tranqulity/core/ui/app_back.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
@@ -32,7 +32,7 @@ class _RegisterViewState extends State<RegisterView> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomBackButton(),
+                AppBack(),
 
                 Center(
                   child: SizedBox(

@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tranqulity/core/logic/helper_methods.dart';
 import 'package:tranqulity/core/ui/app_button.dart';
 import 'package:tranqulity/core/ui/app_input.dart';
-import 'package:tranqulity/core/ui/app_login_or_register.dart';
-import 'package:tranqulity/core/ui/custom_back_button.dart';
-import 'package:tranqulity/views/auth/login.dart';
-import 'package:tranqulity/views/auth/widget/social_button.dart';
+import 'package:tranqulity/core/ui/app_back.dart';
 
 class ForgetPasswordView extends StatefulWidget {
   const ForgetPasswordView({super.key});
@@ -29,7 +25,7 @@ class _ForgetPasswordViewState extends State<ForgetPasswordView> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomBackButton(),
+                AppBack(),
                 SizedBox(height: 285.h),
                 Text('Forget Your Password', style: TextStyle(fontSize: 24.sp)),
                 SizedBox(height: 34.h),

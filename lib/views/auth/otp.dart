@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranqulity/core/ui/app_button.dart';
 import 'package:tranqulity/core/ui/app_verfiy_code.dart';
-import 'package:tranqulity/core/ui/custom_back_button.dart';
+import 'package:tranqulity/core/ui/app_back.dart';
 
 class OtpView extends StatelessWidget {
   OtpView({super.key});
@@ -18,7 +18,7 @@ class OtpView extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomBackButton(),
+                AppBack(),
                 SizedBox(height: 240.h),
 
                 Text(
@@ -38,7 +38,7 @@ class OtpView extends StatelessWidget {
                 AppVerfiyCode(),
                 SizedBox(height: 50.h),
                 AppButton(
-                  text: 'Forget Password',
+                  text: 'Verify',
                   onPressed: () {
                     if (formKey.currentState!.validate()) {}
                   },
